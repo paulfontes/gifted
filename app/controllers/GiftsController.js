@@ -31,9 +31,9 @@ export class GiftsController {
 
 
 
-    async openGift() {
+    async openGift(giftId) {
         try {
-            await giftSandboxService.openGift()
+            await giftSandboxService.openGift(giftId)
         } catch (error) {
             Pop.error
             console.error('failed to open', error)

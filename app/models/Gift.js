@@ -1,6 +1,7 @@
 
 export class Gift {
     constructor(data) {
+        this.id = data.id
         this.tag = data.tag
         this.url = data.url
         this.opened = data.opened
@@ -18,7 +19,7 @@ export class Gift {
                   alt="gift image">
               </div>
               <div class="card-body text-center">
-                <button onclick="app.GiftsController.openGift()" class="btn btn-outline-danger mb-0 ">Open Gift</button>
+                <button onclick="app.giftsController.openGift('${this.id}')" class="btn btn-outline-danger mb-0 ">Open Gift</button>
               </div>
             </div>
           </div>
