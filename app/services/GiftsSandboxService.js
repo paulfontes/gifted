@@ -7,7 +7,8 @@ class GiftSandboxService {
     async createGift(formData) {
         const response = await api.post('api/gifts', formData)
         console.log(response.data);
-
+        const gift = new Gift(response.data)
+        AppState.gifts.push(gift)
         // const createdGift = AppState.gifts.push((gift) => new Gift(formData))
 
 
