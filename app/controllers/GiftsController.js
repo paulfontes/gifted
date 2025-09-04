@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js"
 import { giftSandboxService } from "../services/GiftsSandboxService.js"
+import { getFormData } from "../utils/FormHandler.js"
 import { Pop } from "../utils/Pop.js"
 
 export class GiftsController {
@@ -37,7 +38,27 @@ export class GiftsController {
         } catch (error) {
             Pop.error
             console.error('failed to open', error)
+
         }
+    }
+
+
+
+
+    async createGift() {
+        try {
+            event.preventDefault()
+            const submittedForm = event.target
+            const formData = getFormData(submittedForm)
+            await giftSandboxService.createGift(formData)
+            submittedForm.reset()
+        } catch (error) {
+            Pop.error
+            console.error('failed to create gift', error)
+        }
+
+
+
     }
 
 }

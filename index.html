@@ -26,10 +26,10 @@
     <div class="row">
       <div class="col-4 bg-success">
         <h3 class="mt-5">Gifted</h3>
-        <form onsubmit="" class="mt-5">
+        <form id="gift-form" onsubmit="app.giftsController.createGift()" class="mt-5">
           <label for="tag" name="tag" class="fw-bold">Tag</label>
           <input required class="w-100 mb-5" type="text" id="tag" minlength="3" maxlength="25">
-          <label for="url" name="picture" class="fw-bold">Picture</label>
+          <label for="url" name="url" class="fw-bold">Picture</label>
           <input required class="w-100" type="text" id="url" minlength="3" maxlength="500">
           <button class="mt-5" type="submit">Submit</button>
         </form>
